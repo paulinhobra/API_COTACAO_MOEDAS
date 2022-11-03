@@ -34,3 +34,19 @@ p{
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 25px;
 }
+
+.imagem-moedas{
+    max-width: 85px;
+    max-height: 85px;
+    margin: 0 auto;
+}
+
+.ajuste{    
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 4%;
+}
+
+.border{
+    background-color: rgba(0, 0, 0, 0.8);    
+}

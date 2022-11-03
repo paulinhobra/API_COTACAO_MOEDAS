@@ -21,6 +21,45 @@
                 <h3>COTAÇÃO DAS MOEDAS</h3>
                 <p>API UTILIZADA: ECONOMIA AWESOMEAPI</p>
             </div>
+
+            <div class="col-md-5 border">
+                <div class="row">
+                    <div class="col-md-12 ajuste">
+                        <img src="img/free-coin-dollar-icon-2686-thumb.png" class="imagem-moedas" alt="Dolar Americano">
+                        <h3>Dólar Americano</h3>
+                        <h4>Cotação hoje: R$ 5.14</h4>
+
+                        <form action="" method="POST">
+                            <input type="text">
+                            <button type="submit">Converter</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 ajuste">
+                        <img src="img/free-euro-coin-icon-2141-thumb.png" class="imagem-moedas" alt="Euro">
+                        <h3>Euro</h3>
+                        <h4>Cotação hoje: R$ 5.14</h4>
+
+                        <form action="" method="POST">
+                            <input type="text">
+                            <button type="submit">Converter</button>
+                        </form>
+                    </div>
+
+                    <div class="col-md-12 ajuste">
+                        <img src="img/free-bitcoin-icon-2207-thumb.png" class="imagem-moedas" alt="BitCoin">
+                        <h3>BitCoin</h3>
+                        <h4>Cotação hoje: R$ 5.14</h4>
+
+                        <form action="" method="POST">
+                            <input type="text">
+                            <button type="submit">Converter</button>
+                        </form>                        
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
