@@ -50,3 +50,19 @@ p{
 .border{
     background-color: rgba(0, 0, 0, 0.8);    
 }
+
+.button{
+    background-color: #63d323;
+    font-weight: bolder;
+    text-transform: uppercase;
+    width: 120px;
+    height: 32px;
+    border: 1px solid rgb(75, 74, 74);
+    border-radius: 6px;
+    color: rgb(39, 37, 37);
+}
+
+.button:hover{
+    background-color: #64ad3a;
+    transition: 1s;
+}
