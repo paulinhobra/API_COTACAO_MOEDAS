@@ -7,6 +7,14 @@
         $r->setUrl("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL");
 
         $return = $r->requestApi();
+
+        if(isset($_POST['submit'])){
+            if(is_numeric($_POST["valor"])){
+                $valor = $_POST["valor"];
+            }else {
+                $msg = "Valor inválido. Por favor, informe um número!";
+            }
+        }
     
 ?>
 
@@ -33,43 +41,64 @@
                 <h3>COTAÇÃO DAS MOEDAS</h3>
                 <p>API UTILIZADA: ECONOMIA AWESOMEAPI</p>
             </div>
+            
+                <div class="col-md-5 border">
+                    <form action="<?php echo $PHP_SELF; ?>" method="POST">
+                        <div class="row">
+                            <div class="col-md-12 ajuste">
+                                <img src="img/free-coin-dollar-icon-2686-thumb.png" class="imagem-moedas" alt="Dolar Americano">
+                                <h3><?php echo $return["USDBRL"]["name"] ?></h3>
+                                <h4>Cotação hoje: R$ <?php echo number_format($return["USDBRL"]["high"], 2) ?></h4>
+                                <span>
+                                    <?php 
+                                    
+                                        if(isset($valor)){
+                                            echo $valor . " dólares equivalem a R$ " . number_format($valor * $return["USDBRL"]["high"], 2);
+                                        }
 
-            <div class="col-md-5 border">
-                <div class="row">
-                    <div class="col-md-12 ajuste">
-                        <img src="img/free-coin-dollar-icon-2686-thumb.png" class="imagem-moedas" alt="Dolar Americano">
-                        <h3><?php echo $return["USDBRL"]["name"] ?></h3>
-                        <h4>Cotação hoje: R$ <?php echo number_format($return["USDBRL"]["high"], 2) ?></h4>                        
-                        <form action="" method="POST">
-                            <input type="text">
-                            <button class="button" type="submit">Converter</button>
-                        </form>
-                    </div>
-                </div>
+                                    ?>
+                                </span>     
+                            </div>
+                        </div>
 
-                <div class="row">
-                    <div class="col-md-12 ajuste">
-                        <img src="img/free-euro-coin-icon-2141-thumb.png" class="imagem-moedas" alt="Euro">
-                        <h3><?php echo $return["EURBRL"]["name"] ?></h3>
-                        <h4>Cotação hoje: R$ <?php echo number_format($return["EURBRL"]["high"], 2)?></h4>
+                        <div class="row">
+                            <div class="col-md-12 ajuste">
+                                <img src="img/free-euro-coin-icon-2141-thumb.png" class="imagem-moedas" alt="Euro">
+                                <h3><?php echo $return["EURBRL"]["name"] ?></h3>
+                                <h4>Cotação hoje: R$ <?php echo number_format($return["EURBRL"]["high"], 2)?></h4>
+                                <span>
+                                    <?php 
+                                    
+                                        if(isset($valor)){
+                                            echo $valor . " euros equivalem a R$ " . number_format($valor * $return["EURBRL"]["high"], 2);
+                                        }
 
-                        <form action="" method="POST">
-                            <input type="text">
-                            <button class="button" type="submit">Converter</button>
-                        </form>
-                    </div>
+                                    ?>
+                                </span>
+                            </div>
 
-                    <div class="col-md-12 ajuste">
-                        <img src="img/free-bitcoin-icon-2207-thumb.png" class="imagem-moedas" alt="BitCoin">
-                        <h3><?php echo $return["BTCBRL"]["name"] ?></h3>
-                        <h4>Cotação hoje: R$ <?php echo number_format($return["BTCBRL"]["high"], 2)?></h4>
+                            <div class="col-md-12 ajuste">
+                                <img src="img/free-bitcoin-icon-2207-thumb.png" class="imagem-moedas" alt="BitCoin">
+                                <h3><?php echo $return["BTCBRL"]["name"] ?></h3>
+                                <h4>Cotação hoje: R$ <?php echo number_format($return["BTCBRL"]["high"], 2)?></h4>
+                                <span>
+                                    <?php 
+                                    
+                                        if(isset($valor)){
+                                            echo $valor . " bitcoins equivalem a R$ " . number_format($valor * $return["BTCBRL"]["high"], 2) . "<br/>";
+                                        }
 
-                        <form action="" method="POST">
-                            <input type="text">
-                            <button class="button" type="submit">Converter</button>
-                        </form>                        
-                    </div>
-                </div>
+                                    ?>
+                                </span>
+                                <br/>   
+                                <input type="text" name="valor">
+                                <button class="button" name="submit" type="submit">Converter</button>
+                                <span><?php if(isset($msg) && $msg > 0){
+                                    echo "<br/>" . $msg;
+                                } ?></span>                            
+                            </div>                            
+                    </form>
+                    </div>                    
             </div>
         </div>
     </div>
